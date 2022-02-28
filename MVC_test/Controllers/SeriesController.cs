@@ -34,6 +34,7 @@ namespace MVC_test.Controllers
             {
                 _db.Series.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = $"Series: {obj.Name} has been added";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -66,6 +67,7 @@ namespace MVC_test.Controllers
             {
                 _db.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = $"Series: {obj.Name} has been edited";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -98,6 +100,7 @@ namespace MVC_test.Controllers
             }
             _db.Series.Remove(seriesFromDb);
             _db.SaveChanges();
+            TempData["success"] = $"Series: {seriesFromDb.Name} has been deleted";
 
             return RedirectToAction("Index");
         }
