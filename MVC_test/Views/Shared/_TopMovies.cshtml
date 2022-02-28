@@ -1,0 +1,40 @@
+﻿@model Movies
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>        
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Review Score
+            </th>
+            <th>
+                Episodes
+            </th>
+            <th>
+                Release Date
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var movie in TempData["MovieList"] as IEnumerable<Movies>)
+        {
+            <tr>
+                <td>
+                    @movie.Name
+                </td>
+                <td>
+                    @movie.ReviewScore
+                </td>
+                <td>
+                    @movie.Runtime
+                </td>
+                <td>
+                    @movie.RelaseDate
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

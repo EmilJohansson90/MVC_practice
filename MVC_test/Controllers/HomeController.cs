@@ -15,6 +15,8 @@ namespace MVC_test.Controllers
 
         public IActionResult Index()
         {
+            IEnumerable<Movies> objMovieList = ViewData["MovieList"] as IEnumerable<Movies>;
+
             return View();
         }
 
