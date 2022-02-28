@@ -1,24 +1,25 @@
-﻿@model Movies
+﻿@model IEnumerable<Movies>
+
 
 <table class="table table-bordered table-striped" style="width:100%">
     <thead>        
         <tr>
             <th>
-                Name
+                @Html.DisplayNameFor(m => m.Name)
             </th>
             <th>
-                Review Score
+                @Html.DisplayNameFor(m => m.ReviewScore)
             </th>
             <th>
-                Episodes
+                @Html.DisplayNameFor(m => m.Runtime)
             </th>
             <th>
-                Release Date
+                @Html.DisplayNameFor(m => m.RelaseDate)
             </th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var movie in TempData["MovieList"] as IEnumerable<Movies>)
+        @*@foreach(var movie in TemdData["MovieList"] as IEnumerable<Movies>)
         {
             <tr>
                 <td>
@@ -34,7 +35,7 @@
                     @movie.RelaseDate
                 </td>
             </tr>
-        }
+        }*@
         
     </tbody>
 </table>

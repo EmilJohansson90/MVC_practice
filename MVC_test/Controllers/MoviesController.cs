@@ -32,7 +32,7 @@ namespace MVC_test.Controllers
 
             TempData["MovieList"] = orderedList;
 
-            return View();
+            return View(orderedList);
         }
 
         //GET
