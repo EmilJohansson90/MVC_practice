@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Movies>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -19,5 +20,27 @@
             class="btn btn-primary">See all movies</a>
         </div>
     </div>
-    <partial name="~/Views/Shared/_TopMovies.cshtml" />
+    <table class="table table-bordered table-striped" style="width:100%">
+    <thead>        
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.ReviewScore)</th>
+            <th>@Html.DisplayNameFor(m => m.Runtime)</th>
+            <th>@Html.DisplayNameFor(m => m.RelaseDate)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var movie in Model)
+        {
+            <tr>
+                <td width="40%">@movie.Name</td>
+                <td width="20%">@movie.ReviewScore</td>
+                <td width="15%">@movie.Runtime</td>
+                <td width="25%">@movie.RelaseDate</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+    @*<partial name="~/Views/Shared/_TopMovies.cshtml" />*@
 </div>

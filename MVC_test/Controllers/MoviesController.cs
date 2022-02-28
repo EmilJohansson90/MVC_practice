@@ -14,26 +14,21 @@ namespace MVC_test.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Movies> orderedList = _db.Movies
-                .OrderByDescending(x => x.ReviewScore)
-                .Take(5)
-                .ToList();
-
             IEnumerable<Movies> objMovieList = _db.Movies;
             return View(objMovieList);
         }     
         
-        public IActionResult TopMovies()
-        {
-            IEnumerable<Movies> orderedList = _db.Movies
-                .OrderByDescending(x => x.ReviewScore)
-                .Take(5)
-                .ToList();
+        //public IActionResult TopMovies()
+        //{
+        //    IEnumerable<Movies> orderedList = _db.Movies
+        //        .OrderByDescending(x => x.ReviewScore)
+        //        .Take(5)
+        //        .ToList();
 
-            TempData["MovieList"] = orderedList;
+        //    TempData["MovieList"] = orderedList;
 
-            return View(orderedList);
-        }
+        //    return View(orderedList);
+        //}
 
         //GET
         public IActionResult Create()
